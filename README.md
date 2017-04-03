@@ -2,7 +2,7 @@
 ### *A dark theme for both Discord web and Discord Windows app.*
 
 ##### For the web version (with Stylish):
-> * Install Stylish extension to browser
+> * Install Stylish extension to browser:  **[Chrome](https://chrome.google.com/webstore/detail/stylish-custom-themes-for/fjnbnpbmkenffdnngjfgmeleoegfcffe "Stylish on Chrome web store") / [Firefox](https://addons.mozilla.org/en-GB/firefox/addon/stylish/ "Stylish on Mozilla Add-ons")**
 > * Navigate to the Stylish version of the theme
 > * Click on the `Raw` button
 > * `CTRL`+`A` then `CTRL`+`C` or copy all
@@ -15,8 +15,11 @@
 > * Install BetterDiscord
 > * Choose which version you want and click the `Raw` button
 > * Right Click and then click `Save As...`
-> * Save to 
-> `%appdata%\betterdiscord\themes\`
+> * Save to: 
+> 
+> ```
+> %appdata%\betterdiscord\themes\
+> ```
 > make sure the extension is `.theme.css`
 > * Restart Discord
 > * Settings > BetterDiscord > Themes > Select theme
