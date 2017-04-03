@@ -1,7 +1,7 @@
 # Nox-Discord-Theme
 ### *A dark theme for both Discord web and Discord Windows app.*
 
-##### For the web version (with Stylish):
+#### For the web version (with Stylish):
 > * Install Stylish extension to browser:  **[Chrome](https://chrome.google.com/webstore/detail/stylish-custom-themes-for/fjnbnpbmkenffdnngjfgmeleoegfcffe "Stylish on Chrome web store") / [Firefox](https://addons.mozilla.org/en-GB/firefox/addon/stylish/ "Stylish on Mozilla Add-ons")**
 > * Navigate to the Stylish version of the theme
 > * Click on the `Raw` button
