@@ -1,0 +1,1350 @@
+
+	/*          Nox by Malugre        */
+
+	/**//**//**//**//**//**//**//**//**/
+	/*                                */
+	/*          (Sections)            */
+	/*  ____________________________  */
+	/* |                            | */
+	/* |     1. style mode          | */
+	/* |     2. left icons          | */
+	/* |     3. left bar            | */
+	/* |     4. channels            | */
+	/* |     5. top bar             | */
+	/* |     6. messages main       | */
+	/* |     7. right bar           | */
+	/* |     8. pinned messages     | */
+	/* |     9. user menus          | */
+	/* |    10. private messages    | */
+	/* |    11. quick switcher      | */
+	/* |    12. settings            | */
+	/* |    13. miscellaneous       | */
+	/* |    14. scrollbars          | */
+	/* |    15. custom css          | */
+	/* |____________________________| */
+	/*                                */
+	/**//**//**//**//**//**//**//**//**/
+
+
+	    /**//**//**//**//**//**//**/
+	    /*                        */
+	    /*       Style mode       */
+	    /*                        */
+	    /**//**//**//**//**//**//**/
+
+
+	/* 
+
+	Keep this section for floating Discord mode.
+
+	For standard Discord mode: 
+	Delete this 'Style mode' section
+		- OR -
+	Delete these 2 characters --> */
+
+
+.titlebar {
+	left: 70px!important;
+	height: 59px!important;
+	width: calc(100% - 70px)!important;
+	}
+
+div.header-toolbar .separator.separator-win {
+	display: none!important;
+	}
+
+div.layer {
+	background: radial-gradient(circle at 50% 25%, #999, #111)!important;
+	border-top: 1px solid transparent;
+	border-image: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,0.7), rgba(255,255,255,0));
+	border-image-slice: 1;
+	}
+
+div.channels-wrap {
+	margin-top: 58px!important;
+	margin-left: 50px!important;
+	margin-bottom: 50px!important;
+	border-radius: 3px 0px 0px 3px;
+	border-top: 1px solid white!important;
+	border-right: 0px!important;
+	border-image: linear-gradient(to right, rgba(200,200,200,0) 0%, rgba(200,200,200,0.45) 100%);
+	border-image-slice: 1;
+	}
+
+div.account {
+	border-radius: 0px 0px 0px 3px;
+	}
+
+div.chat, #friends {
+	margin-top: 58px!important;
+	margin-right: 50px!important;
+	margin-bottom: 50px!important;
+	border-radius: 0px 3px 3px 0px;
+	border-top: 1px solid transparent!important;
+	border-image: linear-gradient(to right, rgba(200,200,200,0) -25%, rgba(200,200,200,1) 30%, rgba(200,200,200,0) 100%);
+	border-image-slice: 1;
+	}
+
+div.guilds-wrapper .guilds {
+	padding: 15px 0px 15px 10px!important;
+	border-right: 1px solid transparent!important;
+	border-image: linear-gradient(to bottom, rgba(200,200,200,0) 0%, rgba(200,200,200,0.3) 30%, rgba(200,200,200,0) 100%);
+	border-image-slice: 1;
+	}
+
+div.chat .search-bar {
+	background: radial-gradient( ellipse at 30% 30%, #333 0%, #222 100%)!important;
+	box-shadow: inset 1px 1px 1px #111;
+	border-top: 0px!important;
+	border-right: 1px solid rgba(255,255,255,0.2);
+	border-bottom: 1px solid rgba(255,255,255,0.2);
+	}
+
+div.search-bar-inner {
+	background: radial-gradient( circle at 80% 0%, #333 0%, #181818 100%)!important;
+	border-width: 0px 0px 1px 1px!important;
+	border-color: rgba(255,255,255,0.07)!important;
+	box-shadow: inset -1px 1px 1px rgba(0,0,0,0.5);
+	}
+
+div.messages-popout-wrap.themed-popout.recent-mentions-popout, 
+div.messages-popout-wrap.themed-popout {
+	max-height: 700px!important;
+	}
+
+div.guild-channel s {
+	background: -webkit-radial-gradient(100% 30%, #222, #111) !important;
+	}
+
+	/* End of 'floating' section - don't delete past this */
+
+
+	    /**//**//**//**//**//**//**/
+	    /*                        */
+	    /*       Left Icons       */
+	    /*                        */
+	    /**//**//**//**//**//**//**/
+
+
+.guilds-wrapper {
+	background: radial-gradient(ellipse at 100% 0%, #222, #111)!important;
+	}
+
+.guilds-wrapper .guilds {
+	padding: 15px 0px 15px 7px!important;
+	}
+
+.guilds-wrapper .scroller-wrap {
+	width: 70px!important;
+	}
+
+.guilds-wrapper .guilds .guild .guild-inner {
+	border-radius: 1px!important;
+	box-shadow: 0px 0px 0px transparent!important;
+	transition: 0.3s ease;
+	opacity: 1!important;
+	-webkit-filter: grayscale(0.75);
+	}
+
+.guilds-wrapper .guilds .guild .guild-inner::before {
+	position: absolute;
+	top: 0;
+	left: -75%;
+	z-index: 2;
+	display: block;
+	content: '';
+	width: 50%;
+	height: 100%;
+	overflow: hidden;
+	background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, .4));
+	transform: skewX(-25deg);
+	mix-blend-mode: overlay;
+	/* this property isn't recognised in Stylish but still works */
+	
+	pointer-events: none;
+	}
+
+.guilds-wrapper .guilds .guild .guild-inner:hover::before {
+	animation: shine 1s ease 0.1s;
+	}
+
+.guilds-wrapper .guilds .guild.selected .guild-inner {
+	-webkit-filter: grayscale(0)!important;
+	}
+
+.guilds-wrapper .guilds .guild .guild-inner:hover {
+	transition: 0.3s ease;
+	opacity: 1!important;
+	-webkit-filter: grayscale(0);
+	}
+
+.guilds-wrapper .guilds .guild.selected:before,
+.guilds-wrapper .guilds .guild.unread:before {
+	left: -2px!important;
+	border-radius: 0px!important;
+	width: 2px!important;
+	margin-top: -25px!important;
+	}
+
+.guilds-wrapper .guilds .guild.selected:before {
+	height: 50px!important;
+	}
+
+.guilds-wrapper .guilds .guild.unread:before {
+	height: 50px!important;
+	background: #999!important;
+	}
+
+.guilds-wrapper .guilds .guild.selected:before {
+	background: #fff!important;
+	}
+
+.guilds-wrapper .guilds-add {
+	background: rgba(255, 255, 255, 0.2)!important;
+	color: #111!important;
+	border: 0px!important;
+	box-shadow: 0px 0px 0px rgba(255, 255, 255, 0);
+	transition: all 0.3s ease;
+	font-weight: 400!important;
+	}
+
+.guilds-wrapper .guilds-add:hover {
+	background: rgba(255, 255, 255, 0.7)!important;
+	border: 0px!important;
+	box-shadow: 0px 0px 10px rgba(255, 255, 255, 1);
+	text-shadow: 0px 0px 3px #111;
+	overflow: visible;
+	transition: all 0.3s ease;
+	animation: pulse 1s infinite alternate;
+	animation-delay: 0.3s;
+	transform: scale(1.1);
+	}
+
+
+	    /**//**//**//**//**//**//**/
+	    /*                        */
+	    /*        Left Bar        */
+	    /*                        */
+	    /**//**//**//**//**//**//**/
+
+
+.guild-channels {
+	background: -webkit-radial-gradient(center right, 100% 100%, #222, #111) !important;
+	border-right: 0px solid transparent!important;
+	}
+
+.channels-wrap {
+	border-right: 1px solid transparent!important;
+	}
+
+.guild-header header {
+	height: 30px!important;
+	box-shadow: 0 0 0 black!important;
+	border-bottom: 1px solid transparent;
+	border-image: linear-gradient(to right, #111, #333);
+	border-image-slice: 1;
+	padding: 25px 10px 20px 20px;
+	background: radial-gradient( ellipse at bottom right, #222 0%, #111 100%)!important;
+	}
+
+.guild-channels header {
+	margin-top: 10px!important;
+	}
+
+.guild-channels .channel {
+	font-size: 14px!important;
+	}
+
+.guild-channels .channel-text a {
+	padding: 8px 6px 8px 10px!important;
+	}
+
+.guild-channels .channel-text .channel-name:before {
+	color: #fff!important;
+	}
+
+.guild-channels .channel-voice .channel-arrow:hover {
+	background-color: #999!important;
+	}
+
+.guild-channels .channel-text.unread:not(.selected):not(.channel-muted):before {
+	border-radius: 0px!important;
+	width: 2px!important;
+	left: 0px!important;
+	background: rgba(255, 255, 255, 0.3)!important;
+	height: 100%!important;
+	top: 0px!important;
+	}
+
+.account {
+	background: radial-gradient( ellipse at top right, #222 0%, #111 100%)!important;
+	height: 50px!important;
+	}
+
+.account .status {
+	border: 0!important;
+	border-radius: 0px!important;
+	height: 30px!important;
+	bottom: 0px!important;
+	width: 5px!important;
+	right: -5px!important;
+	}
+
+.account .btn {
+	background: #111!important;
+	box-shadow: inset 0px 2px 3px rgba(0, 0, 0, 0.5)!important;
+	border-color: #222!important;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1)!important;
+	}
+
+.account .btn-group {
+	border: 0!important;
+	}
+
+
+	    /**//**//**//**//**//**//**/
+	    /*                        */
+	    /*        Channels        */
+	    /*                        */
+	    /**//**//**//**//**//**//**/
+
+
+.guild-channels .channel-text.selected {
+	background: linear-gradient(to right, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%)!important;
+	transition: background 0.2s!important;
+	}
+
+.guild-channels .channel-text.selected:hover {
+	background: linear-gradient(to right, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%)!important;
+	}
+
+.guild-channels .channel a,
+.guild-channels .channel a:hover {
+	transition: 0.3s!important;
+	}
+
+.guild-channels .channel-text.selected a {
+	text-shadow: 0px 0px 15px rgba(255, 255, 255, 1)!important;
+	overflow: visible!important;
+	}
+
+.guild-channels .channel-text {
+	z-index: 5;
+	}
+
+.guild-channels .channel-text:hover {
+	background: transparent!important;
+	}
+
+.guild-channels .channel-text:after {
+	border-radius: inherit;
+	background-image: linear-gradient(to right, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 100%)!important;
+	content: '';
+	display: block;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	width: 100%;
+	z-index: -1;
+	transition: opacity 0.5s ease!important;
+	}
+
+.guild-channels .channel-text:hover:after {
+	opacity: 1;
+	}
+
+.guild-channels .channel-text.selected:before,
+.guild-channels .channel-text:hover:before {
+	border-left: 2px solid rgba(255, 255, 255, 0.8)!important;
+	}
+
+.channel-name {
+	transition: 0.3s ease;
+	}
+
+.channel-name:hover {
+	text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.8)!important;
+	transition: 0.3s ease;
+	}
+	
+	
+	    /**//**//**//**//**//**//**/
+	    /*                        */
+	    /*         Top Bar        */
+	    /*                        */
+	    /**//**//**//**//**//**//**/
+
+
+.chat {
+	background: radial-gradient( circle at 50% 50%, #333, #181818)!important;
+	}
+
+.chat .search-bar {
+	background: radial-gradient( ellipse at 30% 70%, #333 0%, #111 100%)!important;
+	box-shadow: inset 1px -1px 1px #111;
+	border-top: 1px solid transparent;
+	border-right: 1px solid transparent;
+	}
+
+.search-filter {
+	background: rgba(255, 255, 255, 0.3)!important;
+	}
+
+.markdown-modal {
+	background: radial-gradient( ellipse at 30% 20%, #444 0%, #222 100%)!important;
+	box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.9);
+	color: #fff!important;
+	}
+
+.markdown-modal .markdown-modal-header {
+	color: #fff!important;
+	font-size: 150%!important;
+	}
+
+.markdown-modal .markdown-modal-header .markdown-modal-close {
+	-webkit-filter: grayscale(1);
+	}
+
+
+	    /**//**//**//**//**//**//**/
+	    /*                        */
+	    /*      Messages Main     */
+	    /*                        */
+	    /**//**//**//**//**//**//**/
+
+
+.messages-wrapper {
+	background: radial-gradient(ellipse at 30% 30%, #202020 -10%, #111 80%)!important;
+	}
+
+.chat .new-messages-bar {
+	background: radial-gradient(ellipse at center bottom, #888 0%, #555 100%)!important;
+	}
+
+.chat .new-messages-bar button:last-child {
+	color: #eee!important;
+	}
+
+.chat .has-more button {
+	background: rgba(100, 100, 100, 0.8)!important;
+	color: #fff!important;
+	}
+
+.message-group .avatar-large {
+	margin-right: 15px!important;
+	margin-top: 0px!important;
+	border-radius: 1px!important;
+	position: relative;
+	overflow: hidden;
+	}
+
+.message-group .avatar-large:hover {
+	opacity: 1!important;
+	}
+
+.message-group .avatar-large::before {
+	position: absolute;
+	top: 0;
+	left: -75%;
+	z-index: 2;
+	display: block;
+	content: '';
+	width: 50%;
+	height: 100%;
+	overflow: hidden;
+	background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, .7));
+	transform: skewX(-28deg);
+	mix-blend-mode: overlay;
+	/* this property isn't recognised in Stylish but still works */
+	
+	pointer-events: none;
+	}
+
+.message-group .avatar-large:hover::before {
+	animation: shine 1.1s ease;
+	}
+
+.message-group {
+	padding: 10px 10px 10px 2px!important;
+	}
+
+.chat .user-name {
+	transition: text-shadow 0.3s ease;
+	}
+
+.chat .user-name:hover {
+	text-shadow: 0px 0px 15px rgba(255, 255, 255, 1);
+	text-decoration: none!important;
+	transition: text-shadow 0.3s ease;
+	}
+
+.message-group .comment {
+	margin-right: 0px!important;
+	}
+
+.message-group .comment .markup .mention {
+	background: rgba(255, 255, 255, .5)!important;
+	font-weight: bold!important;
+	color: #171717!important;
+	border-radius: 2px!important;
+	padding: 0px 2px 0px 2px;
+	transition: background-color 0.3s ease;
+	}
+
+.message-group .comment .markup .mention:hover {
+	background: rgba(255, 255, 255, .7)!important;
+	transition: background-color 0.3s ease;
+	}
+
+.message-group .mentioned .markup .mention {
+	background: rgba(255, 255, 255, .6)!important;
+	color: #60142C!important;
+	}
+
+.message-group .mentioned .message-text {
+	background: rgba(255, 0, 80, .3)!important;
+	}
+
+.message-group .mentioned .markup {
+	color: #fff!important;
+	padding: 5px!important;
+	}
+
+.message-group .mentioned .message-text:after {
+	border-left-color: rgba(255, 0, 80, 1)!important;
+	background: rgba(255, 0, 80, .3)!important;
+	}
+
+.emoji.jumboable {
+	width: 40px!important;
+	height: 40px!important;
+	}
+
+.friends-table .messages .divider:before,
+.friends-table .messages .divider span,
+.messages-wrapper .messages .divider:before,
+.messages-wrapper .messages .divider span {
+	background: transparent!important;
+	}
+
+.friends-table .messages .divider.divider-red>span,
+.messages-wrapper .messages .divider.divider-red>span {
+	color: #fff!important;
+	text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+	}
+
+.friends-table .messages .divider.divider-red>div,
+.messages-wrapper .messages .divider.divider-red>div {
+	box-shadow: 0px 0px 10px rgba(255, 255, 255, 0);
+	}
+
+.friends-table .messages .divider.divider-red>div,
+.messages-wrapper .messages .divider.divider-red>div:nth-child(1) {
+	background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 90%)!important;
+	}
+
+.messages-wrapper .messages .divider:not(.red) div:nth-child(1) {
+	background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 90%)!important;
+	}
+
+.friends-table .messages .divider.divider-red>div,
+.messages-wrapper .messages .divider.divider-red>div:nth-child(3) {
+	background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 90%)!important;
+	}
+
+.messages-wrapper .messages .divider:not(.red) div:nth-child(3) {
+	background: linear-gradient(to right, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 90%)!important;
+	}
+
+.message-group .embed-wrapper .embed-color-pill {
+	background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.4) 40%, rgba(255, 255, 255, 0.1) 100%)!important;
+	}
+
+.message-group .embed {
+	background: radial-gradient(circle at center, #555 0%, #222 100%)!important;
+	box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
+	border: 0!important;
+	border-top: 1px solid transparent!important;
+	}
+
+.embed .embed-thumbnail img {
+	-webkit-filter: drop-shadow(0px 2px 3px rgba(0, 0, 0, 0.5));
+	border-radius: 0px!important;
+	}
+
+.messages-wrapper .messages .divider:not(.red) span {
+	color: #999!important;
+	}
+
+.message-group:not(.has-divider) {
+	border: 0!important;
+	}
+
+.chat>.content {
+	background: radial-gradient(circle at 50% 30%, #333, #111)!important;
+	}
+
+.chat .jump-to-present-bar {
+	background: rgba(100, 100, 100, 0.8)!important;
+	}
+
+.channel-textarea-inner,
+.channel-textarea.has-results .channel-textarea-inner {
+	border: 0!important;
+	}
+
+.channel-textarea-inner {
+	background: radial-gradient(circle at 40% 20%, #333 0%, #171717 70%)!important;
+	box-shadow: inset 0px 3px 3px #0f0f0f, inset 0px -1px 0px 1px rgba(255, 255, 255, 0.07);
+	}
+
+.channel-textarea-upload {
+	border-right: 5px solid #111!important;
+	box-shadow: 2px 0px 1px #0f0f0f;
+	}
+
+.chat form .typing {
+	background: transparent!important;
+	}
+	
+
+	    /**//**//**//**//**//**//**/
+	    /*                        */
+	    /*       Right Bar        */
+	    /*                        */
+	    /**//**//**//**//**//**//**/
+
+
+.channel-members-loading {
+	background: #333!important;
+	}
+
+.channel-members-loading .heading {
+	background: #171717!important;
+	display: none!important;
+	}
+
+.channel-members-loading .member,
+.channel-members-loading .member:nth-child(3n+2),
+.channel-members-loading .member:nth-child(2n-4),
+.channel-members-loading .member:nth-child(7n-1) {
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+Cjxzdmcgd2lkdGg9IjI0MCIgaGVpZ2h0PSI0MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczpzdmc9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KIDxnPgogIDx0aXRsZT5MYXllciAxPC90aXRsZT4KICA8cGF0aCBpZD0ic3ZnXzEiIGQ9Im0wLDBsMjQwLDBsMCw0MGwtMjQwLDBsMCwtNDB6bTMwLDIwYzAsLTguMjg0IDYuNzE0LC0xNSAxNSwtMTVjOC4yODQsMCAxNSw2LjcxNCAxNSwxNWMwLDguMjg0IC02LjcxNCwxNSAtMTUsMTVjLTguMjg0LDAgLTE1LC02LjcxNCAtMTUsLTE1em00MCwwYzAsLTIuNzYgMi4yMywtNSA0Ljk5MywtNWw5MC4wMTQsMGMyLjc1NywwIDQuOTkzLDIuMjQ0IDQuOTkzLDVjMCwyLjc2IC0yLjIzLDUgLTQuOTkzLDVsLTkwLjAxNCwwYy0yLjc1NywwIC00Ljk5MywtMi4yNDQgLTQuOTkzLC01eiIgZmlsbC1ydWxlPSJldmVub2RkIiBmaWxsPSIjMTcxNzE3Ii8+CiA8L2c+Cjwvc3ZnPg==)!important;
+	background-position: -20px center!important;
+	}
+
+.channel-members-loading .background {
+	background-image: linear-gradient(100deg, transparent 25%, rgba(255, 255, 255, .5), transparent 75%)!important;
+	}
+
+.channel-members {
+	border-left: 0px!important;
+	padding: 0px!important;
+	background: radial-gradient(ellipse at left, #222 0%, #111 100%)!important;
+	}
+
+.channel-members-wrap {
+	border-left: 1px solid transparent!important;
+	width: 50px!important;
+	min-width: 50px!important;
+	transition: 0.4s ease;
+	}
+
+.channel-members-wrap:hover {
+	min-width: 240px!important;
+	width: 240px!important;
+	transition: 0.3s ease;
+	transition-delay: 0.2s;
+	}
+
+.channel-members h2 {
+	text-align: center!important;
+	}
+
+.channel-members .member {
+	padding-left: 10px!important;
+	transition: padding 0.3s ease;
+	}
+
+.channel-members .member:hover {
+	background: linear-gradient(to right, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.1) 15%, rgba(255, 255, 255, 0) 50%)!important;
+	padding-left: 20px!important;
+	transition: padding 0.3s ease;
+	}
+
+.channel-members .member:not(.disabled) {
+	transition: padding 0.3s;
+	padding-bottom: 8px!important;
+	}
+
+.channel-members .avatar-small {
+	border-radius: 1px 1px 0px 0px!important;
+	}
+
+.channel-members .avatar-small .status {
+	border-color: #171717!important;
+	border: 0!important;
+	border-radius: 0px 0px 1px 1px!important;
+	left: 0px!important;
+	bottom: -3px!important;
+	width: 30px!important;
+	height: 3px!important;
+	transition: height 0.2s ease;
+	opacity: 1!important;
+	}
+
+.channel-members .avatar-small .status-typing {
+	height: 15px!important;
+	border-radius: 0px 0px 2px 2px!important;
+	transition: height 0.2s ease;
+	}
+
+.channel-members .member.member-status-offline .avatar-small {
+	transition: -webkit-filter 0.3s ease;
+	}
+
+.channel-members .member .member-username {
+	font-size: 15px!important;
+	}
+
+.channel-members .member+h2 {
+	margin-top: 10px!important;
+	}
+
+
+	    /**//**//**//**//**//**//**/
+	    /*                        */
+	    /*     Pinned Messages    */
+	    /*                        */
+	    /**//**//**//**//**//**//**/
+
+
+.themed-popout .header {
+	background: radial-gradient(ellipse at 50% 100%, #222, #111)!important;
+	box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.5);
+	}
+
+.themed-popout {
+	background: radial-gradient(ellipse at 50% 30%, #333 0%, #111 100%)!important;
+	}
+
+.messages-popout-wrap .messages-popout .message-group {
+	background: transparent!important;
+	}
+
+
+	    /**//**//**//**//**//**//**/
+	    /*                        */
+	    /*       User Menu        */
+	    /*                        */
+	    /**//**//**//**//**//**//**/
+
+
+.user-popout {
+	border-top: 1px solid transparent;
+	}
+
+.user-popout .header {
+	background: radial-gradient(circle at 50% 20%, #555 0%, #222 100%)!important;
+	}
+
+.user-popout .avatar-wrapper .avatar-popout {
+	border: 0px solid #222!important;
+	border-radius: 2px!important;
+	box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.5);
+	}
+
+.user-popout .avatar-wrapper .avatar-hint {
+	border-radius: 1px!important;
+	margin: 0px!important;
+	}
+
+.user-popout .avatar-wrapper .avatar-popout .status {
+	border-radius: 1px!important;
+	box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.5);
+	left: 0px!important;
+	width: 100%;
+	bottom: -5px!important;
+	height: 5px!important;
+	}
+
+.user-popout .avatar-wrapper .avatar-popout .status:after {
+	content: '';
+	display: block;
+	position: absolute;
+	background-color: inherit;
+	border-radius: 1px! important;
+	left: 0px!important;
+	width: 100%;
+	top: -95px!important;
+	height: 5px!important;
+	}
+
+.user-popout .body {
+	background: radial-gradient(circle at 50% 20%, #444 0%, #222 100%)!important;
+	box-shadow: inset 0px 5px 15px rgba(0, 0, 0, 0.5);
+	border: solid #222;
+	border-width: 0px 7px;
+	}
+
+.user-popout .footer {
+	background: radial-gradient(circle at 50% 20%, #555 0%, #222 100%)!important;
+	box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+	}
+
+.member-roles .member-role {
+	background: #222!important;
+	box-shadow: inset 0px 2px 2px rgba(0, 0, 0, 0.5);
+	border-top: 0;
+	border-color: rgba(255, 255, 255, 0.1);
+	}
+
+#user-profile-modal .header {
+	background: radial-gradient(circle at 50% 100%, #222, #111)!important;
+	}
+
+#user-profile-modal .header:after {
+	background: none!important;
+	}
+
+#user-profile-modal .tab-bar-container {
+	background: linear-gradient(to right, #111, #222, #111)!important;
+	}
+
+#user-profile-modal .scroller {
+	background: radial-gradient(circle at 50% 0%, #222, #111)!important;
+	}
+
+#user-profile-modal .header .header-info .header-info-inner .discord-tag {
+	color: #fff!important;
+	}
+
+#user-profile-modal .header .header-info .header-info-inner .discord-tag .discriminator {
+	color: rgba(255, 255, 255, 0.3)!important;
+	}
+
+#user-profile-modal .avatar-wrapper {
+	box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+	}
+
+#user-profile-modal .guilds .section .connected-accounts .connected-account {
+	background: radial-gradient(circle at 50% 20%, #333, #222);
+	border-bottom: 0!important;
+	box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+	}
+
+#user-profile-modal .guilds .section .connected-accounts .connected-account .connected-account-name-inner .connected-account-name,
+#user-profile-modal .guilds .guild .guild-nick,
+#user-profile-modal .guilds .guild .guild-name {
+	color: #fff!important;
+	}
+
+#user-profile-modal .tab-bar .tab-bar-item.selected {
+	color: #fff!important;
+	}
+
+#user-profile-modal .tab-bar .tab-bar-item {
+	color: rgba(255, 255, 255, 0.3)!important;
+	}
+
+.tab-bar.TOP .tab-bar-item.selected {
+	border-bottom: 2px solid #fff!important;
+	}
+
+.tab-bar.TOP .tab-bar-item:hover {
+	border-bottom: 2px solid rgba(255, 255, 255, 0.3)!important;
+	}
+
+#user-profile-modal .guilds .guild:hover {
+	background: linear-gradient(to right, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.1) 15%, transparent 35%)!important;
+	padding-left: 35px!important;
+	transition: padding 0.3s ease;
+	}
+
+#user-profile-modal .guilds .guild {
+	transition: padding 0.3s ease;
+	}
+
+
+	    /**//**//**//**//**//**//**/
+	    /*                        */
+	    /*    Private Messages    */
+	    /*                        */
+	    /**//**//**//**//**//**//**/
+
+
+.search-bar {
+	background: radial-gradient( ellipse at bottom right, #222 0%, #111 100%)!important;
+	}
+
+.search-bar-inner {
+	background: radial-gradient( ellipse at bottom right, #333 0%, #181818 100%)!important;
+	border-width: 1px 0px 0px 1px!important;
+	border-color: rgba(255, 255, 255, 0.07)!important;
+	box-shadow: inset -1px -1px 1px rgba(0, 0, 0, 0.5);
+	}
+
+.private-channels {
+	background: -webkit-radial-gradient(center right, 100% 100%, #222, #111) !important;
+	}
+
+.private-channels .channel.selected,
+.private-channels .channel:hover {
+	background: linear-gradient(to right, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%)!important;
+	}
+
+.private-channels .channel.selected:before {
+	border-left: 2px solid #fff!important;
+	}
+
+.private-channels .channel:hover:before {
+	border-left: 2px solid rgba(255, 255, 255, 0.3)!important;
+	}
+
+#friends .friends-header {
+	background: radial-gradient( circle at 50% 50%, #333, #111)!important;
+	}
+
+.friends-table,
+#friends {
+	background: radial-gradient(ellipse at 30% 50%, #222 0%, #111 85%)!important;
+	}
+
+.private-channels .channel .icon-friends,
+#friends .friends-table .friends-row .friends-column-actions .friends-action,
+.invite-button {
+	background-color: #444!important;
+	}
+
+.invite-button {
+	border-color: #444!important;
+	}
+
+#friends .friends-table .friends-row+.friends-row {
+	border-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0) 100%);
+	border-image-slice: 1;
+	border-top: 1px solid transparent!important;
+	background: rgba(255, 255, 255, 0)!important;
+	transition: background-color 0.3s ease;
+	}
+
+#friends .friends-table .friends-row:hover {
+	background: rgba(255, 255, 255, 0.1)!important;
+	box-shadow: 0px 0px 0px transparent!important;
+	border-radius: 1px!important;
+	transition: background-color 0.3s ease;
+	}
+
+#friends .friends-header .tab-bar .tab-bar-item.tab-bar-item-primary {
+	background: rgba(255, 255, 255, 0.7)!important;
+	}
+
+#friends .friends-header .tab-bar .tab-bar-item.tab-bar-item-primary:not(.selected) .badge {
+	color: #fff!important;
+	background: #222!important;
+	}
+
+#friends .friends-header .tab-bar .tab-bar-item.tab-bar-item-primary.selected {
+	color: rgba(17, 17, 17, 0.5)!important;
+	}
+
+#friends .friends-header .tab-bar .tab-bar-item:hover:not(.selected) {
+	background: rgba(255, 255, 255, 0.2)!important;
+	}
+
+#friends .friends-table .friend-table-add-wrapper .friend-table-add-header {
+	background: transparent!important;
+	}
+
+
+	    /**//**//**//**//**//**//**/
+	    /*                        */
+	    /*     Quick Switcher     */
+	    /*                        */
+	    /**//**//**//**//**//**//**/
+
+
+.quickswitcher {
+	background: radial-gradient(circle at 50% 30%, #333 0%, #222 85%)!important;
+	}
+
+.quickswitcher .big-input {
+	background: radial-gradient(circle at 50% 30%, #333 0%, #222 85%)!important;
+	box-shadow: inset 0px 5px 5px rgba(0, 0, 0, 0.5), inset 0px -1px 0px rgba(255, 255, 255, 0.1)!important;
+	}
+
+.quickswitcher .scroller-wrap:before {
+	display: none;
+	}
+
+.quickswitcher .result.selected {
+	background: rgba(255, 255, 255, 0.3)!important;
+	}
+
+
+	    /**//**//**//**//**//**//**/
+	    /*                        */
+	    /*        Settings        */
+	    /*                        */
+	    /**//**//**//**//**//**//**/
+
+
+.settings .settings-header {
+	background: radial-gradient( ellipse at right, #222, #111)!important;
+	}
+
+.tab-bar.SIDE .tab-bar-item:before {
+	border-left: 4px solid rgba(255, 255, 255, 0.5)!important;
+	}
+
+.tab-bar.TOP .tab-bar-item.selected {
+	color: #111!important;
+	}
+
+.avatar-uploader-inner {
+	border-radius: 1px!important;
+	}
+
+
+	    /**//**//**//**//**//**//**/
+	    /*                        */
+	    /*      Miscellaneous     */
+	    /*                        */
+	    /**//**//**//**//**//**//**/
+
+
+.connecting {
+	background: radial-gradient(circle at 50% 20%, #555, #222)!important;
+	}
+
+.connecting .attribution,
+.connecting .connection-status,
+.connecting .quote {
+	color: #999!important;
+	}
+
+.connecting img,
+.connecting video,
+.connecting video.ready {
+	mix-blend-mode: lighten;
+	/* this property isn't recognised in Stylish but still works */
+	
+	}
+
+.tooltip {
+	background: #666!important;
+	}
+
+.tooltip.tooltip-right:after {
+	border-right-color: #666!important;
+	}
+
+.tooltip.tooltip-left:after {
+	border-left-color: #666!important;
+	}
+
+.tooltip.tooltip-top:after {
+	border-top-color: #666!important;
+	}
+
+.tooltip.tooltip-bottom:after {
+	border-bottom-color: #666!important;
+	}
+
+.popout {
+	box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.7);
+	}
+
+.popout-menu,
+.search-popout {
+	background: radial-gradient( ellipse at 50% 25%, #444, #222)!important;
+	box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.7);
+	}
+
+.search-popout .search-option .filter {
+	color: #fff!important;
+	}
+
+.search-popout .option.selected {
+	background: linear-gradient(to right, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 50%)!important;
+	}
+
+.search-popout .option:after {
+	background: linear-gradient(to right, transparent, #2D2D2D 85%)!important;
+	}
+
+.search-popout .option.user .displayed-nick {
+	color: #fff!important;
+	}
+
+.popout-menu .popout-menu-item {
+	-webkit-filter: brightness(1.5);
+	}
+
+.popout-menu .popout-menu-item:hover {
+	background: linear-gradient(to right, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 50%)!important;
+	color: #fff!important;
+	}
+
+.tab-bar.TOP .tab-bar-item.selected {
+	color: #fff!important;
+	}
+
+.emoji-picker {
+	background: radial-gradient(ellipse farthest-corner at 50% 25%, #444, #222)!important;
+	border: 0!important;
+	}
+
+.emoji-picker .sticky-header {
+	background: #2E2E2E!important;
+	}
+
+.emoji-picker .search-bar {
+	background: transparent!important;
+	}
+
+.emoji-picker .categories .item.selected {
+	border-bottom-color: #999!important;
+	}
+
+#bda-qem {
+	color: #999!important;
+	background: radial-gradient(circle at 50% 20%, #333, #111)!important;
+	}
+
+#bda-qem button {
+	color: #999!important;
+	border: 0!important;
+	box-shadow: 0px 0px!important;
+	}
+
+#bda-qem button.active {
+	background: rgba(255, 255, 255, 0.5)!important;
+	color: #111!important;
+	}
+
+#bda-qem button.active:hover {
+	background: rgba(255, 255, 255, 0.5)!important;
+	color: #fff!important;
+	}
+
+#bda-qem button:hover {
+	background: rgba(255, 255, 255, 0.1)!important;
+	color: #fff!important;
+	}
+
+#bda-qem-favourite-container,
+#bda-qem-twitch-container {
+	background: radial-gradient(circle at 50% 20%, #333, #111)!important;
+	}
+
+.search-bar.search-bar-light .search-bar-inner {
+	background: radial-gradient(ellipse at 50% 25%, #222, #222)!important;
+	border-bottom: 1px solid white;
+	border-top: 0px!important;
+	}
+
+.search-bar.search-bar-light input {
+	color: #fff!important;
+	}
+
+.checkbox .checkbox-inner input[type=checkbox]:checked+span {
+	background: #222!important;
+	border-color: #222!important;
+	}
+
+.form .btn-primary,
+.radio .radio-inner span:after {
+	background: #222!important;
+	}
+
+.form .btn-primary:hover,
+.radio:hover span:after {
+	background: #444!important;
+	}
+
+.avatar-large,
+.avatar-small,
+.avatar-xlarge,
+.avatar-xsmall,
+.avatar-xxlarge {
+	border-radius: 2px!important;
+	}
+
+.avatar-profile {
+	border-radius: 0px!important;
+	}
+
+#user-profile-modal .guilds .section+.section,
+.chat .title-wrap,
+.popout-menu .popout-menu-separator {
+	border-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0) 100%)!important;
+	border-image-slice: 1!important;
+	}
+
+.message-group:not(.has-divider),
+.markdown-modal .markdown-modal-header {
+	border-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.1) 20%, rgba(255, 255, 255, 0) 100%)!important;
+	border-image-slice: 1!important;
+	}
+
+.account {
+	border-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 100%)!important;
+	border-image-slice: 1!important;
+	}
+
+.user-popout .footer,
+.user-popout,
+.chat form,
+#user-profile-modal .tab-bar-container,
+#user-profile-modal .guilds .section .connected-accounts .connected-account,
+.search-bar.search-bar-light .search-bar-inner,
+.message-group .embed {
+	border-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0) 100%)!important;
+	border-image-slice: 1!important;
+	}
+
+.channels-wrap,
+.channel-members-wrap {
+	border-image: linear-gradient(to bottom, #111 0%, #333 50%, #111 100%);
+	border-image-slice: 1;
+	}
+
+.need-help-modal .header,
+.need-help-modal .footer {
+	background: radial-gradient(circle at 50% 25%, #444, #222)!important;
+	border-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+	border-image-slice: 1;
+	border-top: 1px solid transparent!important;
+	}
+
+.need-help-modal .header input[type=text] {
+	color: #999!important;
+	background: radial-gradient(ellipse at 50% 75%, #444, #111)!important;
+	box-shadow: 0px 0px 0px!important;
+	border-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+	border-image-slice: 1;
+	}
+
+.form .form-inner {
+	background: radial-gradient(circle at 50% 20%, #333, #111)!important;
+	}
+
+
+	    /**//**//**//**//**//**//**/
+	    /*                        */
+	    /*       Scrollbars       */
+	    /*                        */
+	    /**//**//**//**//**//**//**/
+
+
+.scroller-wrap .scroller::-webkit-scrollbar {
+	width: 8px!important;
+	}
+
+.scroller-wrap .scroller::-webkit-scrollbar-thumb,
+.scroller-wrap .scroller::-webkit-scrollbar-track-piece {
+	border: 0px!important;
+	}
+
+.scroller-wrap .scroller::-webkit-scrollbar-track-piece {
+	background-color: transparent!important;
+	border-radius: 0px!important;
+	}
+
+.scroller-wrap .scroller.guild-channels::-webkit-scrollbar-track-piece {
+	background-color: transparent!important;
+	border-radius: 0px!important;
+	}
+
+.scroller-wrap .scroller.messages::-webkit-scrollbar-track-piece, 
+.scroller-wrap .scroller.channel-members::-webkit-scrollbar-track-piece, 
+.emoji-picker .scroller-wrap .scroller::-webkit-scrollbar-track-piece, 
+.private-channels .scroller::-webkit-scrollbar-track-piece, 
+.scroller-wrap .scroller.guilds::-webkit-scrollbar-track-piece, 
+.quickswitcher.dark .scroller-wrap .scroller::-webkit-scrollbar-track-piece, 
+.quickswitcher .scroller-wrap .scroller::-webkit-scrollbar-track-piece {
+	background: transparent!important;
+	}
+
+.scroller-wrap .scroller.guild-channels::-webkit-scrollbar-thumb, 
+.scroller-wrap .scroller.channel-members::-webkit-scrollbar-thumb, 
+.private-channels .scroller::-webkit-scrollbar-thumb {
+	background-color: rgba(255,255,255,0.1)!important;
+	border-radius: 1px!important;
+	}
+
+.friends-table .scroller-wrap ::-webkit-scrollbar-thumb,
+.messages-wrapper .scroller-wrap ::-webkit-scrollbar-thumb, 
+.scroller-wrap .scroller.guilds::-webkit-scrollbar-thumb, 
+.quickswitcher.dark .scroller-wrap .scroller::-webkit-scrollbar-thumb, 
+.quickswitcher .scroller-wrap .scroller::-webkit-scrollbar-thumb {
+	background: #333!important;
+	border-radius: 1px!important;
+	}
+
+.scroller-wrap .scroller ::-webkit-scrollbar-thumb, 
+.emoji-picker .scroller-wrap .scroller::-webkit-scrollbar-thumb {
+	background: #444!important;
+	border-radius: 1px!important;
+	}
+
+
+	    /**//**//**//**//**//**//**/
+	    /*                        */
+	    /*       Animations       */
+	    /*                        */
+	    /**//**//**//**//**//**//**/
+
+@keyframes pulse {
+	0% {-webkit-filter: opacity(1);	transform: scale(1.1);}
+	30% {transform: scale(1);}
+	100% {-webkit-filter: opacity(0.3); transform: scale(1);}
+	}
+
+@keyframes shine {
+	100% {left: 120%;}
+	}
+
+
+	    /**//**//**//**//**//**//**/
+	    /*                        */
+	    /*       Custom CSS       */
+	    /*                        */
+	    /**//**//**//**//**//**//**/
+
+
+ 	/*\ 
+
+	You can find selectors in the Discord app with
+	this keyboard shortcut: 
+    		
+		[Ctrl] + [Shift] + [I]
+
+	You can then use your mouse to find specific
+	selectors after pressing:
+			
+		[Ctrl] + [Shift] + [C]
+	
+	Remember to add !important tags to declarations
+		
+		- for example:	
+			|>    color: #fff;
+		- becomes:
+			|>    color: #fff !important;
+
+	If custom CSS is being overriden then specify
+	element type in front of the selector 
+		
+		- for example (div):
+			|>    .guild-channels{
+		- becomes:
+        		|>    div.guild-channels{
+
+		- and (span):
+			|>    .guild-channels header{
+		- becomes:
+			|>    span.guild-channels header{
+
+	Add CSS Below \*/
