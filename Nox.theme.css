@@ -1,5 +1,5 @@
 
-	/*          Nox by Malugre        */
+	/*         Nox by Malugre         */
 
 	/**//**//**//**//**//**//**//**//**/
 	/*                                */
@@ -34,9 +34,7 @@
 
 
 	/* 
-
 	Keep this section for floating Discord mode.
-
 	For standard Discord mode: 
 	Delete this 'Style mode' section
 		- OR -
@@ -1087,10 +1085,6 @@ div.guild-channel s {
 	color: #fff!important;
 	}
 
-.tab-bar.TOP .tab-bar-item.selected {
-	color: #fff!important;
-	}
-
 .emoji-picker {
 	background: radial-gradient(ellipse farthest-corner at 50% 25%, #444, #222)!important;
 	border: 0!important;
@@ -1316,12 +1310,10 @@ div.guild-channel s {
 
 
  	/*\ 
-
 	You can find selectors in the Discord app with
 	this keyboard shortcut: 
     		
 		[Ctrl] + [Shift] + [I]
-
 	You can then use your mouse to find specific
 	selectors after pressing:
 			
@@ -1333,7 +1325,6 @@ div.guild-channel s {
 			|>    color: #fff;
 		- becomes:
 			|>    color: #fff !important;
-
 	If custom CSS is being overriden then specify
 	element type in front of the selector 
 		
@@ -1341,10 +1332,8 @@ div.guild-channel s {
 			|>    .guild-channels{
 		- becomes:
         		|>    div.guild-channels{
-
 		- and (span):
 			|>    .guild-channels header{
 		- becomes:
 			|>    span.guild-channels header{
-
 	Add CSS Below \*/
